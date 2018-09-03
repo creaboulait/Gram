@@ -4,6 +4,7 @@
 %head
 
   %title Gram
+  = javascript_include_tag "application"
   = csrf_meta_tags
 
 %body
@@ -11,4 +12,3 @@
     =content_tag :div, msg, class: "alert alert-info"
 
   =yield
-
