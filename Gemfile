@@ -16,7 +16,6 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 # gem "autoprefixer-rails"
-
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -47,7 +46,7 @@ gem 'haml'
 # gem 'bootstrap', '~> 4.1.3'
 # gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
-
+gem 'bootstrap-sass', '~> 3.2.0.2'
 # Add forms
 gem 'simple_form'
 
@@ -56,6 +55,9 @@ gem 'devise'
 
 # Style the index page
 gem 'masonry-rails'
+
+# Enable like functionality
+gem 'acts_as_votable', '~> 0.11.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
