@@ -24,3 +24,28 @@
 							- if user_signed_in?
 								= link_to 'Edit', edit_pic_path, class: "btn btn-info"
 								= link_to 'Delete', pic_path, method: :delete, data: { confirm: "Burn it to the ground?"}, class: "btn btn-danger"
+
+					%br
+
+					.div.col-md-6          
+            
+						- @pic.comments.take(20).each do |comment| 
+							.div.row
+								%p.strong
+								= comment.description 
+								&nbsp;
+								= comment.user.email
+
+							- if signed_in? && (current_user == comment.user || current_user == @pic.user)
+								= link_to 'Delete Comment', "/pics/#{@pic.id}/comments/#{comment.id}", method: :delete, data: { confirm: "Are you sure?" }
+
+										
+						- @comment = Comment.new
+						- @comment.pic_id = params[:pic_id] 
+
+						%br
+						%br
+						= simple_form_for [@pic, @comment], url: pic_comments_path(@pic) do |f| 
+							= f.input :description, placeholder: "Add a comment", input_html: { class: 'form-control' }
+							= f.button :submit, class: "btn btn-primary"
+				
