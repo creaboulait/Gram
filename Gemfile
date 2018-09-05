@@ -54,7 +54,7 @@ gem 'simple_form'
 gem 'devise'
 
 # Style the index page
-gem 'masonry-rails'
+gem 'masonry-rails', '~> 0.2.4'
 
 # Enable like functionality
 gem 'acts_as_votable', '~> 0.11.1'
